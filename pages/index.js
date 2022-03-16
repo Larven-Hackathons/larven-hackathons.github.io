@@ -1,6 +1,7 @@
 import 'react-notion-x/src/styles.css';
+import Image from 'next/image';
 import { NotionAPI } from 'notion-client';
-import { NotionRenderer } from 'react-notion-x';
+import { Collection, CollectionRow, NotionRenderer } from 'react-notion-x';
 
 const notion = new NotionAPI();
 
@@ -11,7 +12,42 @@ const notion = new NotionAPI();
  */
 export default function Home({ recordMap }) {
   return (
-    <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
+    <NotionRenderer
+      recordMap={recordMap}
+      fullPage={true}
+      darkMode={false}
+      components={{
+        image: ({
+          src,
+          alt,
+
+          height,
+          width,
+
+          className,
+          style,
+          loading,
+          decoding,
+          
+          ref,
+          onLoad
+        }) => (
+          <Image
+            className={className}
+            style={style}
+            src={src}
+            ref={ref}
+            width={width}
+            height={height}
+            loading='lazy'
+            alt={alt}
+            decoding='async'
+          />
+        ),
+        collection: Collection,
+        collectionRow: CollectionRow
+      }}
+    />
   );
 }
 
