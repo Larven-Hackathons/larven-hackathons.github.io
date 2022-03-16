@@ -16,7 +16,6 @@ export default function Home({ recordMap }) {
       recordMap={recordMap}
       fullPage={true}
       darkMode={false}
-      rootDomain="https://hackathons.larven.co.tz"
       components={{
         image: ({
           src,
