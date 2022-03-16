@@ -1,5 +1,4 @@
 import 'react-notion-x/src/styles.css';
-import Image from 'next/image';
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils'
 import { NotionAPI } from 'notion-client';
 import { Collection, CollectionRow, NotionRenderer } from 'react-notion-x';
@@ -33,7 +32,7 @@ export default function Home({ recordMap }) {
           ref,
           onLoad
         }) => (
-          <Image
+          <img
             className={className}
             style={style}
             src={src}
