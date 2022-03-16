@@ -2,6 +2,8 @@ import 'react-notion-x/src/styles.css';
 import { NotionAPI } from 'notion-client';
 import { NotionRenderer } from 'react-notion-x';
 
+const notion = new NotionAPI();
+
 /**
  * Component with function to redirect to discord server https://discord.gg/X4YcTCNJFU
  * @param {Object} props
@@ -18,9 +20,8 @@ export default function Home({ recordMap }) {
  * @return {Object}
  */
 export async function getStaticProps() {
-  const notion = new NotionAPI();
-
-  const recordMap = await notion.getPage('Larven-Hackathon-4ebb468c7ca44a6c815ca77ab4979d7c');
+  const pageId = 'Larven-Hackathon-4ebb468c7ca44a6c815ca77ab4979d7c';
+  const recordMap = await notion.getPage(pageId);
 
   return {
     props: {
