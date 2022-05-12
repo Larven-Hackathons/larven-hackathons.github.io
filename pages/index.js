@@ -55,7 +55,7 @@ export default function Home({ recordMap }) {
  * @return {Object}
  */
 export async function getStaticProps() {
-  const pageId = 'Larven-Hackathon-4ebb468c7ca44a6c815ca77ab4979d7c';
+  const pageId = 'Larven-Hackathons-4ebb468c7ca44a6c815ca77ab4979d7c';
   const recordMap = await notion.getPage(pageId);
 
   return {
