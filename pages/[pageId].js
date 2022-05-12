@@ -75,7 +75,7 @@ export async function getStaticPaths() {
   //   }
   // }
 
-  const rootNotionPageId = 'Larven-Hackathon-4ebb468c7ca44a6c815ca77ab4979d7c'
+  const rootNotionPageId = 'Larven-Hackathons-4ebb468c7ca44a6c815ca77ab4979d7c'
   const rootNotionSpaceId = 'larven'
 
   // This crawls all public pages starting from the given root page in order
