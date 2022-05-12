@@ -1,13 +1,15 @@
 {
   "name": "larven-hackathons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "yarn build && vercel deploy",
+    "deploy": "yarn build && vercel deploy --prod"
   },
   "dependencies": {
     "next": "12.1.0",
